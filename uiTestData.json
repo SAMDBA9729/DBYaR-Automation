@@ -1,0 +1,68 @@
+{
+    "postAPIUrl": "https://reqres.in/api/users",
+    "getAPIUrl": "https://reqres.in/api/unknown",
+    "tokenUrl": "https://api.escuelajs.co/api/v1/auth/login",
+    "getUserProfileUrl" : "https://api.escuelajs.co/api/v1/auth/profile",
+    "postAPIPayload":{
+        "name": "SWAT_TEAM",
+        "job": "Testing"
+      },
+    "tokenPayload":{
+        "email": "john@mail.com",
+        "password": "changeme"
+      },
+      "loginPayLoad_old":{
+        "username":"anshika.mishra@elait.com",
+        "password":"Anshika@123",
+        "logInAssert":"/dashboard"
+      },
+      "loginPayLoad":{
+        "username":"austin@dbyarforum.org",
+        "password":"Austin@123",
+        "logInAssert": "/dashboard",
+        "logInAssertOld": "/\/dashboard/"
+      },
+      "CentreAdmin":{
+        "username":"gopal@yopmail.com",
+        "password":"Gopal@123"
+      },
+      "logOut":{
+        "name":"Anshika Mishra",
+        "logout":"Logout",
+        "logOutAssert":"login"
+      },
+
+           "hubRegisterData": [
+          {
+            "hubNamefill": "Hub One",
+            "visionName": "Vision One",
+            "missionValue": "Mission One",
+            "contactNo": "7865676567",
+            "address": "Address One",
+            "pincode": "846004",
+            "email": "email1@example.com"
+          },
+          {
+            "hubNamefill": "Hub Two",
+            "visionName": "Vision Two",
+            "missionValue": "Mission Two",
+            "contactNo": "7865445656",
+            "address": "Address Two",
+            "pincode": "846004",
+            "email": "email2@example.com"
+          }
+        ],
+        "hubRegister":{
+          "hubNames": "Hub",
+          "visionNames": "Vision",
+          "missionValues": "Mission",
+          "addresses": "Address",
+          "emailprefix": "email",
+          "emailsuffix": "@yopmail.com"
+      },
+      "staffRegister":{
+        "fullName": "Name"
+      }
+
+}
+      
