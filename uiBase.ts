@@ -60,7 +60,7 @@ const applicationHome = {
         await page.fill(adminPage.password, loginData.password);
         
         // Click the submit button
-        await page.click(adminPage.submitButton);
+        await page.click(adminPage.login_button);
         
         // Wait for the navigation to complete
         await page.waitForNavigation();
