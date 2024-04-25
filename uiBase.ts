@@ -1,11 +1,12 @@
 import { readExcel } from "./macro";
 import { expect } from "@playwright/test";
 import { elementFactoryUtils } from "../utils/uiElementFactoryModule";
-import * as testData from "C:\\Users\\Sambit Nayak\\Desktop\\PlayWright_Automation\\FreshFramework-06032024\\FreshFramework\\nilgiri\\resource\\uiTestData\\uiTestData.json";
+import * as testData from "../resource/uiTestData/uiTestData.json";
 import * as personJsonData from "C:\\Users\\Sambit Nayak\\Desktop\\PlayWright_Automation\\FreshFramework-06032024\\FreshFramework\\nilgiri\\resource\\Test Data\\userData.json";
 import * as path from 'path';
 import * as xlsx from 'xlsx';
 import { generateRandomPhoneNumber, getRandomTestData, generateRandomHubData } from "./randomData";
+import { TIMEOUT } from "dns";
 
 const adminPage = elementFactoryUtils.admin.pageOne;
 const homePage = elementFactoryUtils.home.pageTwo;
@@ -319,17 +320,16 @@ async staffRegistration({ page }: NavigationParams): Promise<void> {
     await page.waitForTimeout(5000);
     //await page.pause();
 
-    if (await page.isVisible(adminPage.successMessageSelector)) {
+    if (await page.isVisible(adminPage.successMessageSelector, {TIMEOUT})) {
         const staffSuccessMessage = await page.locator(adminPage.successMessageSelector).innerText();
-        console.log('Staff Registration successful.', staffSuccessMessage);
+        console.log('Entered Staff Name is:',"'", personData.Full_Name,"'",staffSuccessMessage);
     }
 
     else if
 
-    (await page.isVisible(adminPage.errorMessageSelector)) {
+    (await page.isVisible(adminPage.errorMessageSelector, {TIMEOUT})) {
         const staffErrorMessage = await page.locator(adminPage.errorMessageSelector).innerText();
-        console.log('Staff Already Exists',staffErrorMessage);
-        page.on('console',staffErrorMessage);
+        console.log('Entered Staff Name is:',"'",personData.fullName,"'", staffErrorMessage);
     }
 
     else console.log('No Error Message Displayed');
